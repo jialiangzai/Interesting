@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 400px;
+            margin: 100px auto 0;
+            border: 1px solid #888;
+            text-align: center;
+            font-size: 14px;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        th,
+        td {
+            padding: 6px;
+            border: grey 1px solid;
+            color: rgb(45, 46, 0);
+        }
+
+        td {
+            font-size: 13px;
+        }
+
+        th {
+            font-size: 16px;
+            background-color: indianred;
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: rgba(248, 7, 248, 0.667);
+        }
+    </style>
+</head>
+
+<body>
+    <table class="wrap">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id='inp1' name="checkbox"></th>
+                <th>铠甲勇士</th>
+                <th>召唤人</th>
+            </tr>
+        </thead>
+        <tbody id="jtb">
+            <tr>
+                <td><input type="checkbox" id="inp2"></td>
+                <td>炎龙侠</td>
+                <td>炘南</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp3"></td>
+
+                <td>风鹰侠</td>
+                <td>东杉</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp4"></td>
+
+                <td>黑犀侠</td>
+                <td>北淼</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp5"></td>
+
+                <td>雪獒侠</td>
+                <td>西钊</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp6"></td>
+
+                <td>地虎侠</td>
+                <td>坤中</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp7"></td>
+
+                <td>帝皇铠甲</td>
+                <td>向阳、子阳 、五行铠甲召唤人合体</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp8"></td>
+
+                <td>刑天铠甲</td>
+                <td>李昊天</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp9"></td>
+
+                <td>飞影铠甲</td>
+                <td>徐霆飞</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp10"></td>
+
+                <td>金刚铠甲</td>
+                <td>吴刚</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="inp11"></td>
+
+                <td>修罗铠甲</td>
+                <td>炎帝、路法、李昊天</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script>
+        //全选或者取消全选的做法就是让td的input跟随th的全选按钮
+        var quan = document.getElementById('inp1')
+        var fen = document.getElementById('jtb').querySelectorAll('input')
+        //注册事件
+        quan.onclick = function () {
+            for (var i = 0; i < fen.length; i++) {
+                console.log(this.checked);
+                fen[i].checked = this.checked
+            }
+        }
+        //现在当fen.checked都被选中时quan。checked也是true
+        for (var i = 0; i < fen.length; i++) {
+            fen[i].onclick = function () {
+                // 当fen.ckeck为true判断checked如为ture则quan.checked=this.checked
+                var flag = true;
+                //声明一个变量flag用来判断fen[i]是否有一个未选中
+                for (var i = 0; i < fen.length; i++) {
+                    if (!fen[i].checked) {
+                        // quan.checked=flag
+                        flag = false;
+                        break;
+                    }
+                } quan.checked = flag
+
+            }
+        }
+    </script>
+</body>
+
+</html>
