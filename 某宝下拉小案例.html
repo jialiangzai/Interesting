@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .nav {
+            width: 300px;
+            margin: 100px auto;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav>li {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 41px;
+            text-align: center;
+        }
+
+        .nav li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 41px;
+            color: #333;
+        }
+
+        .nav>li>a:hover {
+            background-color: rgb(199, 26, 26);
+        }
+
+        .nav ul {
+            display: none;
+            position: absolute;
+            top: 41px;
+            left: 0;
+            width: 100%;
+            border-left: 1px solid #FECC5B;
+            border-right: 1px solid #FECC5B;
+        }
+
+        .nav ul li {
+            padding: 2px;
+            height: 50px;
+            border-bottom: 1px solid #FECC5B;
+        }
+
+        .nav ul li:hover {
+            background-color: #6ae009;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li><a href="#">我的淘宝</a>
+            <ul>
+                <li>已买到的宝贝</li>
+                <li>我的足迹</li>
+            </ul>
+        </li>
+        <li><a href="#">收藏夹</a>
+            <ul>
+                <li>收藏的宝贝</li>
+                <li>收藏的店铺</li>
+            </ul>
+        </li>
+        <li><a href="#">联系客服</a>
+            <ul>
+                <li>消费者客服</li>
+                <li>商家服务大厅</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        //获取元素
+        var lis = document.querySelector('.nav')
+        var liss = lis.children;
+        console.log(liss);
+        //获取所有子元素节点
+        for (var i = 0; i < liss.length; i++) {
+            liss[i].onmouseover = function () {
+                this.children[1].style.display = 'block'
+            }
+            liss[i].onmouseout = function () {
+                this.children[1].style.display = 'none'
+            }
+        }
+
+    </script>
+</body>
+
+</html>
