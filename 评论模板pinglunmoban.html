@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 200px;
+        }
+
+        textarea {
+            /* position: absolute; */
+            margin-left: -100px;
+            width: 200px;
+            height: 100px;
+            border: 5px solid pink;
+            resize: none;
+            outline: none;
+        }
+
+        ul {
+            margin-bottom: 50px;
+        }
+
+        li {
+            list-style: square;
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: rgb(3, 8, 54);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="wenben" id="text" cols="30" rows="20">
+
+    </textarea>
+    <button>发布</button>
+    <ul>
+    </ul>
+    <script>
+        //获取元素
+        var but = document.querySelector('button')
+        var text1 = document.querySelector('textarea')
+        var ul1 = document.querySelector('ul')
+        //单击响应函数
+        but.onclick = function () {
+            if (text1 == '') {
+                alert('输入内容不能为空')
+                return false;
+                //函数就要有返回值
+            } else {
+                //创建节点
+                var li = document.createElement('li')
+                //添加节点
+                li.innerHTML = text1.value
+                ul1.insertBefore(li, ul1.children[0])
+            }
+        }
+    </script>
+</body>
+
+</html>
