@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="删除">
+    <ul>
+        <li>大毛</li>
+        <li>二毛</li>
+        <li>三毛</li>
+    </ul>
+    <script>
+        var but = document.querySelector('input')
+        var ull = document.querySelector('ul')
+        // console.log(lis);
+        but.onclick = function () {
+            if (ull.children.length == 0) {
+                alert('已经为空')
+                this.disabled = true
+            } else {
+                ull.removeChild(ull.children[0])
+            }
+        }
+    </script>
+</body>
+
+</html>
