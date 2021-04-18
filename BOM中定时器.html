@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>会员</button>
+    <script>
+        var bun = document.querySelector('button')
+        var tie1 = setTimeout(function () {
+            console.log('一块钱的会员只要1元');
+        }, 6000);
+        bun.addEventListener('click', function () {
+            clearTimeout(tie1)    //window可以省略，括号里是要停止的定时器标识符
+        })
+    </script>
+</body>
+
+</html>
