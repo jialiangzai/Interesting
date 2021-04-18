@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            width: 432px;
+            height: 100px;
+            background-color: rgb(133, 77, 86);
+            margin: 200px auto;
+            overflow: hidden;
+            box-sizing: content-box;
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            padding: 0 40px;
+            margin: 10px;
+            background-color: #666;
+            line-height: 80px;
+            text-align: center;
+            color: #c9c3b6;
+            font-size: 25px;
+            font-weight: 900;
+            border: yellow 5px dashed;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="hours"></span>
+        <span class="minutes"></span>
+        <span class="seconds"></span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hours')
+        var minutes = document.querySelector('.minutes')
+        var seconds = document.querySelector('.seconds')
+        var inputTe = +new Date('2021-04-20 20:00:00')//拿到外面
+        countDown()         //先执行一次防止卡间隔
+        //定时器
+        setInterval(countDown, 1000);
+        function countDown(time) {
+            // var inputtime = +new Date(time)//因为数据比较重要方便存储和使用
+            var nowtime = +new Date()
+            var times = (inputTe - nowtime) / 1000  //获得的是毫秒/100
+            var h = parseInt(times / 60 / 60 % 24)
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h
+            var m = parseInt(times / 60 % 60)
+            m = m < 10 ? '0' + m : m;
+            minutes.innerHTML = m
+            var s = parseInt(times % 60)
+            s = s < 10 ? '0' + s : s;
+            seconds.innerHTML = s
+        }
+        console.log(countDown('2021-04-20 20:00:00'));
+    </script>
+</body>
+
+</html>
