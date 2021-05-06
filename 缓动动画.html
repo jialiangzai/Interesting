@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .xiaohong,
+        .xiaoming {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .xiaoming {
+            top: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xiaohong">小红</div>
+    <div class="xiaoming">小明</div>
+    <button class="btn500">让小红走500步</button>
+    <button class="btn800">让小红走800步</button>
+    <script>
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        var ming = document.querySelector('.xiaoming');
+        var hong = document.querySelector('.xiaohong');
+        //缓动动画原理就是让元素的运动速度有所变化
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetLeft) / 10;
+                //步长值取整数
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                //考虑正负
+                //三元运算符判断是否为正数和负数，实现动画函数的多个目标值之间的移动
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer)
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px'
+                }
+            }, 10)
+        }
+        // animate(hong, 300)
+        // animate(ming, 300)
+        btn500.addEventListener('click', function () {
+            animate(hong, 500)
+        })
+        btn800.addEventListener('click', function () {
+            animate(hong, 800)
+        })
+        //注意这里步长值和调试中的值不匹配，应遵循：如果为正值，取大负值，取小
+    </script>
+</body>
+
+</html>
