@@ -1,0 +1,334 @@
+.main {
+    width      : 980px;
+    height     : 455px;
+    margin-left: 220px;
+    margin-top : 10px;
+}
+
+.main .focus {
+    position: relative;
+    float   : left;
+    width   : 721px;
+    height  : 455px;
+    overflow: hidden;
+}
+
+.focus ul {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    width   : 600%;
+}
+
+.focus li {
+    float: left;
+}
+
+.arrow-l,
+.arrow-r {
+    display         : none;
+    position        : absolute;
+    top             : 50%;
+    margin-top      : -20px;
+    width           : 24px;
+    height          : 40px;
+    background-color: rgba(0, 0, 0, .3);
+    text-align      : center;
+    line-height     : 40px;
+    font-size       : 18px;
+    color           : #fff;
+    z-index         : 2;
+    border-radius   : 10px;
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.circle {
+    position: absolute;
+    bottom  : 10px;
+    left    : 50px;
+}
+
+.circle li {
+    float        : left;
+    margin       : 0 3px;
+    width        : 14px;
+    height       : 14px;
+    border       : 2px solid rgb(255, 255, 255, .5);
+    border-radius: 50%;
+    cursor       : pointer;
+}
+
+.circle .current {
+    background-color: #fff;
+}
+
+.newsflash {
+    float : right;
+    width : 250px;
+    height: 455px;
+}
+
+.news {
+    height: 165px;
+    border: 1px solid #e4e4e4;
+}
+
+.bargain {
+    margin-top: 5px;
+}
+
+.newsflash .news .news-hd {
+    height       : 32px;
+    border-bottom: 2px dotted #e4e4e4;
+    padding      : 0 15px;
+    font-size    : 14px;
+    line-height  : 32px;
+}
+
+.news .news-hd,
+.news-hd {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.newsflash .news .news-hd a {
+    float      : right;
+    font-size  : 12px;
+    font-family: 'icomoon';
+}
+
+.news-bd {
+    padding: 10px 0 0 15px;
+}
+
+.news-bd li {
+    height: 23px;
+}
+
+.news-bd li:nth-child(4) {
+    white-space  : nowrap;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+}
+
+.lifeservice {
+    overflow  : hidden;
+    height    : 209px;
+    border    : 1px solid #e4e4e4;
+    border-top: 0;
+}
+
+.lifeservice li {
+    position     : relative;
+    float        : left;
+    text-align   : center;
+    width        : 63px;
+    height       : 71px;
+    border-right : 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.lifeservice ul {
+    width: 252px;
+}
+
+.lifeservice li i {
+    display   : inline-block;
+    width     : 24px;
+    height    : 28px;
+    background: url(../images/icons.png) no-repeat -19px -15px;
+    margin-top: 12px;
+}
+
+.lifeservice .dian {
+    background-position: -141px -13px;
+}
+
+.lifeservice li img {
+    position: absolute;
+    top     : 0;
+    right   : 0;
+}
+
+.recom {
+    height          : 163px;
+    background-color: #ebebeb;
+    margin-top      : 12px;
+}
+
+.recom_hd {
+    float           : left;
+    height          : 163px;
+    width           : 200px;
+    text-align      : center;
+    background-color: #5c5251;
+}
+
+.recom_hd img {
+    margin: 30px 0 10px 0;
+}
+
+.recom_hd h3 {
+    font-size  : 18px;
+    color      : #fff;
+    font-weight: 600;
+}
+
+.recom_bd {
+    float: left;
+}
+
+.recom_bd ul li {
+    float   : left;
+    position: relative;
+}
+
+.recom_bd ul li:nth-child(-n+3):after {
+    content         : "";
+    position        : absolute;
+    right           : 0px;
+    top             : 10px;
+    width           : 1px;
+    height          : 135px;
+    background-color: #ddd;
+}
+
+.recom_bd img {
+    width : 248px;
+    height: 163px;
+}
+
+.guess {
+    height: 280px;
+}
+
+.subhd {
+    position: relative;
+    height  : 30px;
+}
+
+.guess .subhd h3 {
+    float       : left;
+    font-size   : 16px;
+    padding-left: 5px;
+    color       : rgb(39, 38, 38);
+}
+
+.guess .subhd p {
+    float        : right;
+    position     : absolute;
+    top          : 8px;
+    right        : -16px;
+    content      : "";
+    padding-right: 35px;
+    font-family  : 'icomoon';
+}
+
+.guess_you {
+    border: #ddd 1px solid;
+}
+
+.guess_you li {
+    float     : left;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.price {
+    font-weight    : 800;
+    font-size      : x-large;
+    text-align-last: center;
+    color          : rgb(224, 35, 35);
+}
+
+/*floor 楼层区*/
+
+.box-hd {
+    height       : 30px;
+    border-bottom: 2px solid #c81623;
+    margin-top   : 25px;
+}
+
+.box-hd h3 {
+    float    : left;
+    font-size: 18px;
+    color    : #c81623;
+}
+
+.tab-list {
+    float      : right;
+    line-height: 30px;
+}
+
+.tab-list li {
+    float: left;
+}
+
+.tab-list li a {
+    margin: 0 15px;
+}
+
+.box-bd {
+    height       : 360px;
+    margin-bottom: 10px;
+}
+
+.w209 {
+    width           : 209px;
+    background-color: #f9f9f9;
+}
+
+.w329 {
+    width: 329px;
+}
+
+.w219 {
+    width       : 219px;
+    border-right: 1px solid #ccc;
+}
+
+.w220 {
+    width       : 220px;
+    border-right: 1px solid #ccc;
+}
+
+.tab-con li {
+    float : left;
+    height: 360px;
+}
+
+.tab-con-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-con-list {
+    overflow     : hidden;
+    margin-bottom: 15px;
+}
+
+.tab-con-list li {
+    width        : 86px;
+    height       : 32px;
+    line-height  : 32px;
+    border-bottom: 1px solid #ccc;
+    margin-left  : 10px;
+    text-align   : center;
+}
+
+.box-bd li {
+    overflow: hidden;
+}
+
+.box-bd img {
+    /*过渡写到本身上， 谁做动画，给谁加*/
+    transition: all .2s;
+}
+
+
+/*我们鼠标经过图片 往右走 8px*/
+
+.box-bd img:hover {
+    margin-left: 8px;
+}
