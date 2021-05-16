@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="拖拽模态框.css">
+</head>
+
+<body>
+    <script src="模态框.js"></script>
+    <div class="login-header">
+        <a id="link" href="javascript:;">点击，弹出登录页面</a>
+    </div>
+    <div id="login" class="login">
+        <div id="title" class="login-title">登录会员
+            <span><a href="javascript:;" id="closeBtn" class="close-login">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label>用户名: </label>
+                <input type="text" id="yonghu" placeholder="请输入用户名" name="info[yonghu]" class="list-input">
+            </div>
+            <div class="login-input">
+                <label>密码：</label>
+                <input type="password" id="pas" placeholder="请输入登录密码" name="info[password]" class="list-input">
+            </div>
+        </div>
+        <div id="loginBtn" class="login-button">
+            <a id="login-input-submit" href="javascript:void(0);">登录会员
+            </a>
+        </div>
+    </div>
+    <div id="bg" class="login-bg"></div>
+</body>
+
+</html>
