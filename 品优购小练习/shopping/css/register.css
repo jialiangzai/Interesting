@@ -1,0 +1,174 @@
+.w {
+    width : 1200px;
+    margin: 0 auto;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+input {
+    outline: 0;
+}
+
+.header {
+    height       : 82px;
+    border-bottom: 2px solid #b1191a;
+    margin-top   : 1px;
+}
+
+.log {
+    padding-top: 10px;
+}
+
+.reg_form {
+    height    : 600px;
+    border    : solid 1px #ccc;
+    margin-top: 10px;
+}
+
+.reg_form li {
+    margin-bottom: 10px;
+}
+
+.registerarea h3 {
+    height       : 40px;
+    border-bottom: 1px solid #ccc;
+    border-color : #ececec;
+    padding      : 0 10px;
+    font-weight  : normal;
+    line-height  : 40px;
+    font-size    : 18px;
+}
+
+/* 这里要定死不然后面的em不能正常布局 */
+.registerarea h3 em {
+    font-size: 12px;
+    float    : right;
+}
+
+.registerarea a {
+    color: #c81623;
+}
+
+.registerarea a:hover {
+    color: #f52630;
+}
+
+.reg_form {
+    width : 600px;
+    height: 500px;
+    margin: 40px auto 0;
+}
+
+.reg_form label {
+    display    : inline-block;
+    width      : 100px;
+    height     : 36px;
+    line-height: 36px;
+    text-align : center;
+}
+
+.reg_form .inp {
+    width       : 238px;
+    height      : 25px;
+    border      : solid 1px #ccc;
+    margin-top  : 18px;
+    padding-left: 10px;
+    outline     : 0;
+}
+
+.reg_form .error_icon {
+    display       : inline-block;
+    width         : 20px;
+    height        : 20px;
+    background    : url(../images/error.png) no-repeat;
+    /*出现行内块元素的地方一般都会出现这句话*/
+    vertical-align: middle;
+    /*让背景图片和文字对齐（中线对齐）*/
+    /*若中线对齐之后依然觉得不够齐 这里可以利用这个微调 让图标再往上走2px*/
+    margin-top    : -2px;
+}
+
+.reg_form .error {
+    margin-left: 20px;
+    color      : #f52630;
+}
+
+.reg_form .success {
+    margin-left: 10px;
+    color      : #40b83f;
+}
+
+.success_icon {
+    display       : inline-block;
+    width         : 20px;
+    height        : 20px;
+    background    : url(../images/success.png) no-repeat;
+    /*出现行内块元素的地方一般都会出现这句话*/
+    vertical-align: middle;
+    /*让背景图片和文字对齐（中线对齐）*/
+    /*若中线对齐之后依然觉得不够齐 这里可以利用这个微调 让图标再往上走2px*/
+    margin-top    : -2px;
+}
+
+.safe {
+    padding-left: 181px;
+    color       : #ccc;
+}
+
+.safe em {
+    padding      : 0 15px;
+    border-radius: 20px;
+}
+
+.safe .ruo {
+    background-color: #de1111;
+}
+
+.safe .zhong {
+    background-color: #40b83f;
+}
+
+.qiang {
+    background-color: #f79100;
+}
+
+.agree {
+    padding-left: 160px;
+}
+
+.agree input {
+    vertical-align: sub;
+}
+
+.agree a {
+    color: #1ba1e6;
+}
+
+.over {
+    width           : 220px;
+    height          : 40px;
+    background-color: #c81623;
+    margin          : 30px 0 0 130px;
+    /* li有一个自带1px的边框取消 */
+    border          : 0;
+    color           : #fff;
+    font-size       : 16px;
+}
+
+.mod_copyrght_links,
+.mod_copyrght_info {
+    text-align: center;
+    margin    : 20px 0 15px 0;
+}
+
+.mod_copyrght_links {
+    border-top : 1px solid #ccc;
+    padding-top: 6px;
+}
+
+.mod_copyrght_info {
+    margin-top: -3px;
+}

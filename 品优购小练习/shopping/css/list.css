@@ -1,0 +1,134 @@
+.nav {
+    overflow: hidden;
+}
+
+.sk {
+    position   : absolute;
+    top        : 40px;
+    left       : 190px;
+    width      : 80px;
+    height     : 40px;
+    border-left: #c81523 3px solid;
+    padding    : 3px 0 0 14px;
+}
+
+.sk img {
+    width : 100%;
+    height: 100%;
+}
+
+.sk_con,
+.sk_list,
+.sk_con ul li,
+.sk_list ul li {
+    float: left;
+}
+
+.sk_list ul li a {
+    display    : block;
+    height     : 47px;
+    line-height: 47px;
+    padding    : 0 30px;
+    font-size  : 16px;
+    font-weight: 800;
+    color      : #000;
+}
+
+.sk_con ul li a {
+    display    : block;
+    height     : 45px;
+    line-height: 50px;
+    padding    : 0 20px;
+    font-size  : 12px;
+    font-weight: 400;
+}
+
+.sk_con ul li:last-child a::after {
+    content    : "\e900";
+    font-family: 'icomoon';
+    font-size  : 8px;
+    margin-left: 5px;
+}
+
+.sk_bd {
+    width      : 1200px;
+    padding-top: 25px;
+}
+
+.sk_bd ul .sk_goods {
+    float   : left;
+    position: relative;
+    width   : 288px;
+    height  : 458px;
+    border  : 1px solid transparent;
+    margin  : 0 12px 15px 0;
+}
+
+.sk_goods:hover {
+    border: 1px dotted #535151;
+}
+
+.sk_goods_title {
+    font-size  : 14px;
+    color      : #666;
+    font-weight: normal;
+    padding    : 10px;
+}
+
+.sk_goods_price {
+    padding: 0 10px;
+}
+
+.sk_goods_price em {
+    font-size: 22px;
+    color    : #e60012;
+}
+
+.sk_goods_price del {
+    font-size  : 14px;
+    font-weight: normal;
+    color      : #a4a4a4;
+}
+
+.sk_goods_progress {
+    padding: 0 10px;
+}
+
+.sk_goods .bar {
+    display       : inline-block;
+    width         : 130px;
+    height        : 10px;
+    border        : 1px solid #b1191a;
+    vertical-align: middle;
+    margin        : 0 5px;
+    border-radius : 5px;
+}
+
+.sk_goods .bar_in {
+    width           : 87%;
+    height          : 10px;
+    background-color: #f24349;
+    border-radius   : 5px 0 0 5px;
+}
+
+.sk_goods_progress em,
+.sk_goods_progress i {
+    color     : #f24349;
+    font-style: normal;
+}
+
+.sk_goods_buy {
+    position        : absolute;
+    bottom          : 0;
+    width           : 100%;
+    height          : 50px;
+    background-color: #b1191a;
+    color           : #fff;
+    text-align      : center;
+    line-height     : 50px;
+    font-size       : 20px;
+}
+
+.sk_goods_buy:hover {
+    color: #fff;
+}

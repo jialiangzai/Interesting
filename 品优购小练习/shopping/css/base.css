@@ -1,0 +1,144 @@
+/* 清零边距 */
+blockquote,
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+    margin : 0;
+    padding: 0
+}
+
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 Microsoft YaHei, tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', \5FAE\8F6F\96C5\9ED1, sans-serif
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: courier new, courier, monospace
+}
+
+small {
+    font-size: 12px
+}
+
+/* 去掉小li的项目符号 */
+ol,
+ul,
+li {
+    list-style: none
+}
+
+a {
+    color          : #666;
+    text-decoration: none
+}
+
+a:hover {
+    color: #c81623;
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+legend {
+    color: #000
+}
+
+/* 照顾低版本浏览器图片加链接有边框去除图片底侧空白缝隙 */
+img {
+    border        : 0;
+    vertical-align: middle;
+}
+
+button,
+input,
+select,
+textarea {
+    outline    : none;
+    border     : 0;
+    /* 手动去除边框线和轮廓线 */
+    font-size  : 100%;
+    font-family: tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    /* 抗锯齿性让文字更加清晰 */
+    -webkit-font-smoothing: antialiased;
+    background-color      : #fff;
+    color                 : #666;
+}
+
+.hide,
+.none {
+    display: none;
+}
+
+.clearfix::after {
+    visibility: hidden;
+    clear     : both;
+    display   : block;
+    content   : "·";
+    height    : 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
