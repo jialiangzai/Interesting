@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mycanvas {
+            border: solid 1px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="1000px" height="600px">
+
+    </canvas>
+    <script>
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas.getContext('2d');
+        ctx.translate(mycanvas.width / 2, mycanvas.clientHeight / 2);
+
+        // ctx.beginPath();
+        // ctx.translate(mycanvas.width / 2, mycanvas.clientHeight / 2);
+        // ctx.moveTo(0 ,-100)
+        // ctx.rotate(2 * Math.PI / 3);
+        // ctx.lineTo(0, -100);
+        // ctx.rotate(2 * Math.PI / 3);
+        // ctx.lineTo(0, -100);
+        // ctx.rotate(2 * Math.PI / 3);
+        // ctx.lineTo(0, -100);
+
+        // ctx.lineWidth = '4';
+        // ctx.stroke();
+
+        function drawShape(n) {
+            ctx.beginPath();
+            ctx.moveTo(0, -100);
+            for (var i = 0; i < n; i++) {
+                ctx.rotate(2 * Math.PI / n);
+                ctx.lineTo(0, -100);
+            };
+            ctx.closePath();
+            ctx.stroke()
+
+        };
+        drawShape(3)
+
+        // ctx.beginPath();
+        // ctx.moveTo(0 ,-100)
+        // ctx.rotate(2 * Math.PI / 5);
+        // ctx.lineTo(0, -100);
+        // ctx.rotate(2 * Math.PI / 5);
+        // ctx.lineTo(0, -100);
+        // ctx.rotate(2 * Math.PI / 5);
+        // ctx.lineTo(0, -100);
+        // ctx.rotate(2 * Math.PI / 5);
+        // ctx.lineTo(0, -100);
+        ctx.lineWidth = '3';
+        // ctx.closePath();
+        // ctx.stroke()
+    </script>
+</body>
+
+</html>
