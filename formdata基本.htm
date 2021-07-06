@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="form">
+        <input type="text" name="uname" autocomplete="off">
+        <input type="password" name="upwd" id="">
+        <button type="submit">提交</button>
+    </form>
+    <script>
+        // 提交数据
+        var fd = new FormData();
+        fd.append('uname', 'zss');
+        fd.append('upwd', '123456')
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
+        xhr.send(fd)
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var jr = JSON.parse(xhr.responseText)
+                console.log(jr);
+            }
+        }
+        //获取网页表单的值
+        var form = document.querySelector('#form')
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+            var fd = new FormData(form);
+            var xhr = new XMLHttpRequest()
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
+            xhr.send(fd)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var jr = JSON.parse(xhr.responseText)
+                    console.log(jr);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
