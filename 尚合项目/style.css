@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.w {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.box {
+    height: 1420px;
+}
+
+.header {
+    height: 62px;
+}
+
+.log {
+    padding: 20px 2px 18px 2px;
+}
+
+.search {
+    padding: 18px 0 12px 2px;
+}
+
+.nav {
+    height: 56px;
+    border-top: 1px solid #ccc;
+    padding-top: 1px;
+    border-bottom: 1px solid #ccc;
+    background-color: #c9c9c9;
+}
+
+.nav li {
+    float: left;
+    width: 130px;
+    height: 56px;
+    border-right: 1px solid rgb(131, 126, 126);
+}
+
+.nav li a {
+    display: block;
+    height: 56px;
+    font-size: 15px;
+    line-height: 56px;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+}
+
+.notice {
+    height: 300px;
+    margin-bottom: 1px;
+    background-color: #fbfbfb;
+}
+
+.noticehd {
+    height: 30px;
+    line-height: 30px;
+}
+
+
+.cutleft p {
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+.cutleft span {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 35px;
+    color: #888;
+}
+
+.noticebd {
+    overflow: hidden;
+    margin: 15px 0 53px 15px;
+}
+
+.noticebd .one {
+    width: 310px;
+    height: 225px;
+    padding: 5px 8px 13px 8px;
+    border: 1px solid #000;
+
+}
+
+.lihd {
+    position: relative;
+
+}
+
+.lihd h1 {
+    display: inline-block;
+}
+
+.lihd p {
+    margin-left: 20px;
+    margin-top: -10px;
+    font-size: 14px;
+    color: rgba(41, 129, 6, 0.514);
+}
+
+.libd {
+    text-align: center;
+}
+
+.libd img:nth-child(2) {
+    width: 40%;
+    height: 40%;
+    text-align: center;
+}
+
+.libd .ll,
+.libd .rr {
+    margin: 63px 30px;
+}
+
+.noticebd .two {
+    width: 375px;
+    height: 224px;
+    border: 1px solid #000;
+    margin: 0 10px;
+    padding: 5px 12px;
+}
+
+.more {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    font-size: 14px;
+    padding: 12px 18px;
+    color: grey;
+}
+
+.libd2 dl dt {
+    color: red;
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 1px dashed #000;
+}
+
+.libd2 dl dd {
+    height: 21px;
+    font-size: 14px;
+    color: rgb(131, 126, 126);
+    border-bottom: 1px dashed #000;
+    margin: 8px 0;
+}
+
+.three {
+    width: 250px;
+    height: 225px;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.pp {
+    padding: 4px 18px;
+}
+
+.pp span {
+    font-size: 12px;
+    color: #666;
+}
+
+.txt {
+    font-size: 12px;
+    text-align: left;
+    padding: 0 18px;
+    margin-top: 20px;
+}
+
+.txt p {
+    margin-bottom: 10px;
+}
+
+.footer {
+    height: 334px;
+    width: 100%;
+    background-color: #2d2d2d;
+    color: #fbfbfb;
+}
+
+.help {
+    position: relative;
+    height: 220px;
+    padding: 14px 5px;
+    border-bottom: 1px dashed #385;
+}
+
+.help dl {
+    float: left;
+    height: 28px;
+    margin: 0 45px 0 12px;
+}
+
+.help dl dt {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: darkgray;
+}
+
+.help dl dd {
+    font-size: 10px;
+    margin-bottom: 10px;
+    color: darkgrey;
+}
+
+.help .c {
+    position: absolute;
+    top: -1px;
+    right: -60px;
+}
+
+.footerun {
+    text-align: center;
+}
+
+.copy p {
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 30px;
+    margin-top: 8px;
+    color: rgb(131, 126, 126);
+}
