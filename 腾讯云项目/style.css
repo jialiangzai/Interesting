@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+.header{
+    height: 40px;
+    background-color: #2b303b;
+}
+.logo {
+    padding: 10px 0;
+}
+.navs li{
+    float: left;
+}
+.navs li a {
+    display: inline-block;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size:12px ;
+}
+ li a:hover {
+    color: red;
+}
+.navs li  span {
+    line-height: 40px;
+    color: rgb(255, 255, 255);
+}
+.banner {
+    height: 480px;
+}
+.shortcut {
+    width: 250px;
+    height: 479px;
+    background-color: #1b2a3f;
+}
+.shortcut li {
+    height: 24px;
+    width: 100%;
+    padding: 15px 15px;
+    margin: 10px 0;
+}
+.shortcut ul li a span {
+    float: right;
+}
+.mainn {
+    width: 1200px;
+    height: 480px;
+    background: url(./images/banner.png) no-repeat 0;
+}
+.sections {
+    height:650px;
+    background-color: #fff;
+    padding: 30px 0 40px;
+    margin-bottom: 120px;
+}
+.sections h2,
+.sections h4 {
+    text-align: center;
+}
+.sections h2 {
+    height: 45px;
+}
+.sections h4{
+    font-weight: normal;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+.edu {
+    height: 460px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 40px 48px 74px 50px;
+}
+.sections .edl h2 {
+    height:42px;
+    width: 110px;
+    text-align:left;
+    line-height: 42px;
+    font-weight: 600;
+    margin-bottom:16px; ;
+    border-bottom: 1px solid #000;
+}
+.sections .edl p {
+    width: 441px;
+    height: 192px;
+    line-height: 30px;
+    margin-bottom: 66px;
+}
+.sections .edl button {
+    width: 162px;
+    height: 48px;
+    border: 4px solid #ffa500 ;
+}
+.edr img {
+    width: 580px;
+    height: 346px;
+}
+.footer{
+    height: 400px;
+    background-color:#2e3033 ;
+}
+.service {
+    height: 400px;
+    padding: 28px 0;
+}
+.service dl{
+    float: left;
+    font-size: 14px;
+    padding: 0 35px;
+    margin-right: 35px;
+}
+.service dl dt {
+    text-align: left;
+    height: 15px;
+    margin-bottom: 14px;
+}
+.service dl dd {
+    height: 12px;
+    line-height: 12px;
+    margin: 15px 0;
+}   
+.copy{
+    width: 200px;
+    height: 170px;
+}
+.copy p {
+    padding: 0 10px;
+    height: 50px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.copy button {
+    margin-top: 20px;
+    padding: 12px 73px;
+    border: 0;
+    color: seashell;
+    background-color: rgb(224, 5, 5);
+}
