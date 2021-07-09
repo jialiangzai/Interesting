@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./search.css">
+    <script src="../jquery.js"></script>
+    <script src="../template-web.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./taobao_logo.png" alt="">
+        <div class="box">
+            <div class="tabs">
+                <div class="tab-active">店铺</div>
+                <div class="div">宝贝</div>
+            </div>
+            <div class="search-box">
+                <input type="text" id="ipt" class="ipt" name="ipt" placeholder="请输入要搜索的宝贝">
+                <button class="btnSearch">搜索</button>
+            </div>
+            <!-- 建议列表 -->
+            <div id="suggest-list"></div>
+        </div>
+    </div>
+    <!-- 模板 -->
+    <script type="text/html" id="tpl-suggestList">
+    {{each result}}
+        <div class="suggest-item">{{$value[0]}}</div> 
+        <!-- 因为是result数组返回的是数组，数组的数组所以$value是数组的数组，他的index0，就是想要的内容 -->
+        {{/each}}
+</script>
+    <!-- 监听keyup事件 -->
+    <script>
+        $(function () {
+            $('#ipt').on('keyup', function () {
+                var keywords = $(this).val().trim()
+                if (keywords.lenth <= 0) {
+                    return $('#suggest-list').empty().hide()
+                }
+                getSuggestList(keywords)
+
+            })
+
+
+            
+            function getSuggestList(kw) {
+                $.ajax({
+                    url:'https://suggest.taobao.com/sug?q='+kw,
+                    dataType:'jsonp',
+                    success:function(res){
+                        readerSuggestList(res)
+                    }
+                })
+            }
+
+
+
+            function readerSuggestList(res) {
+                if (res.result.length<=0) {
+                    return $('#suggest-list').empty().hide()
+                }
+                var htmlStr=template('tpl-suggestList',res)
+                $('#suggest-list').html((htmlStr)).show()
+            }
+
+        })
+    </script>
+</body>
+
+</html>  
