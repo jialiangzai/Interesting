@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let total = 200;//默认200
+        let str = 0//存储用户输入的值
+        while (str !== 4) {
+            str = Number(prompt(`请选择您的操作:
+                1. 存款
+                2. 取款
+                3. 查看余额
+                4. 退出
+                 系统默认200元`))
+            // 用户点击非4的其他数字时候
+            switch (str) {
+                case 1:
+                  let store= Number( prompt('请输入您的存款金额'));
+                  total+=store;
+                    break;
+                case 2:
+                   let withd=Number( prompt('请输入您的取款金额'));
+                   total-=withd;
+                    break;
+                case 3:
+                    alert('您的剩余金额为：'+total);
+                    break;
+                case 4:
+                    alert('确认退出')
+                    break;
+            }
+
+        }
+        // ATM机案例考查while循环和switch 思路：系统默认给个金额（随意），设置一个变量用来存储用户输入的数字，
+        // 分析程序的哪一部分是循环的，循环的条件是什么，用switch把循环体细致分为几种具体的情况，
+        // 疑问：输入的非4就循环为什么输入4就终止循环在switch中还能触发
+        // 按照js解析顺序，用户输入4，但是此时的循环条件str=0是满足的循环输入界面并且用str存储用户输入的数字，此时等于4的时候break，跳出while本次循环
+    </script>
+</body>
+
+</html>
