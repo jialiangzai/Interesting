@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 三元运算符
+        // let i=Number(prompt('请输入'))
+        // let i2=Number(prompt('请输入'))
+        // i>i2?alert(i):alert(i2)
+
+        // let d=prompt('请输入数字')
+        // d<10?d='0'+d:d
+        // console.log(d);
+
+        // 1. 在页面中打印输出10句“月薪过万”
+
+        //  let i=0;
+        // while (i<10){
+        //     document.write('月薪过万');
+        //     i++
+        // }
+        // 2. 页面输出1-100
+        // while(i<101){
+        //     document.write(i);
+        //     i++;
+        // }
+
+
+        // 3. 计算从1加到100的总和并输出
+        // let i=1
+        //  let s=0
+        //     while(i<=100){
+        //         s+=i
+        //         i++;
+        //     }
+        //     console.log(s);
+
+
+
+        // 4. 计算1-100之间的所有偶数
+        // let i = 1;
+        // let s=0
+        // while (i <= 100) {
+        //     if (i % 2 == 0) {
+        //         s+=i
+
+        //     }
+        //     i++
+
+        // }
+        // document.write(s);
+
+
+
+        // 5. 接收用户输入用户名和密码，只要用户名不是admin或者密码不是888就一直提示要求重新输入,如果正确则提登录成功
+        // let name = prompt('请输入您的用户名')
+        // let psw = prompt('请输入您的密码')
+        // while (name != 'admin' || psw != 888) {
+
+        //     name = prompt('请输入您的用户名')
+        //     psw = prompt('请输入您的密码')
+        // }
+        // alert('登录成功')
+        // 1.利用for循环输出1~100数字
+        //     for (let i=1;i<=100;i++){
+        //         console.log(i);
+        //     }
+        //     // 2.求1-100之间所有数的和
+        //     let sum=0
+        //    for (let i=1;i<=100;i++){
+        //         sum+=i;
+        //     }
+        //     console.log(sum);
+
+        //     // 3.求1-100之间所有偶数的和
+        //     let sum2=0
+        //     for (let i=1;i<=100;i++){
+        //         if (i%2==0) {
+        //             sum2+=i
+        //         }
+        //     }
+        //     console.log(sum2);
+        //     // 4.输入班级人数(比如5人),然后依次输入学员成绩
+        //     let np=Number(prompt('请输入班级人数'));
+        //     let sum3=0
+        //     for(let i=1;i<=np;i++){
+        //       let np1= Number(prompt('请输入第'+i+'个的成绩'));
+        //        sum3+=np1
+        //     }
+        //     alert('总成绩为'+sum3)
+        // 5.页面中打印5个小星星
+        // for(let i=0;i<=4;i++){
+        //     console.log('☆');
+        // }
+        // 6.三角形
+        // let coumnt=Number(prompt('请输入您要打印几行小星星'));
+        // for(let i=1;i<=coumnt;i++){
+
+        //     for(let j=1;j<=i;j++){
+        //         document.write('☆')
+        //     }
+        //     document.write('<br>')
+        // }
+
+
+
+        // 九九乘法表
+        // for (let i = 1; i <= 9; i++) {
+        //     // document.write('<br>')
+        //     let str = ''
+        //     for (let j = 1; j <= i; j++) {
+        //         // document.write(`${j}X${i}= ${i*j}`)
+
+        //         str += `${j}X${i}= ${i * j}\t`
+
+        //     } console.log(str);
+
+        // }
+        // 数组
+        // let Array=['a','b','c','d','f']
+        // for (let k=0;k<Array.length;k++){  
+        //   console.log(Array[k])
+        // }
+        // Array.pop()
+        // Array.shift()
+        // Array.push('搜索')
+        // Array.unshift('0')
+        // console.log(Array);
+        // 7.1. 练习1: 使用for循环 - 求出数组元素的和 [5, 8, 9, 2, 1, 5]
+        //  let ary=[5, 8, 9, 2, 1, 5];
+        // //  遍历数组
+        // let sum=0
+        // for (let i=0;i<ary.length;i++){
+        //    sum+=ary[i];
+        // }
+        // console.log(sum);
+        // 练习2: 使用for循环 - 求出数组里大于5的和 [4, 9, 5, 20, 3, 11]
+        // let ary = [4, 9, 5, 20, 3, 11];
+        // let news = [];
+        // let sum3 = 0
+        // for (let i = 0; i < ary.length; i++) {
+        //     if (ary[i] > 5) {
+        //         sum3 += ary[i]
+        //     }
+        // } 
+        // console.log(sum3);
+        // 练习3: 使用for循环 - 求出班级里同学们平均年龄[15, 19, 21, 33, 18, 24]
+
+        // let ary = [15, 19, 21, 33, 18, 24];
+        // let avgs = 0
+        // for (let i = 0; i < ary.length; i++) {
+        //     avgs += ary[i] / ary.length
+
+        // }
+        // console.log(parseInt(avgs));
+
+        // 练习4: 打印数组里所有的奇数[5, 2, 8, 10, 3, 7]
+        // let ary=[5, 2, 8, 10, 3, 7]
+
+        // for (let i=0;i<ary.length;i++){
+        //     if (ary[i]%2!==0) {
+        //         console.log(ary[i]);
+        //     }
+        // }
+
+        // 练习5: 计算[2, 6, 18, 15, 40] 中能被3整除的偶数的和
+        // let ary=[2, 6, 18, 15, 40]
+        // let sum=0
+        // for (let i=0;i<ary.length;i++){
+        //    let item= ary[i]
+        //     if (item%3==0 && item%2==0) {
+        //         sum+=item
+        //     } 
+        // }
+        // console.log(sum);
+
+        // 练习6: 计算[2, 6, 18, 15, 40] 中能被3整除的偶数的个数
+        // let ary = [2, 6, 18, 15, 40]
+        // let sum = 0
+
+        // for (let i = 0; i < ary.length; i++) {
+        //     let item = ary[i]
+        //     if (item % 3 == 0 && item % 2 == 0) {
+        //         sum++
+        //     }
+        // }
+        // console.log(sum);
+
+
+
+        // 练习7：给一个数字数组，该数组中有很多数字0，将不为0的数据存入到一个新的数组中
+            // let ary=[0,1,2,3,4,5,6,7,8,9,0,12,14,16,48,0,0,0,0,15,42,61]
+            // let newary=[]
+            // for (let i=0;i<ary.length;i++){
+            //     if (ary[i]!==0) {
+            //         newary.push(ary[i])
+            //     }
+            // }
+            // console.log(newary);
+    </script>
+</body>
+
+</html>
