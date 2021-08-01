@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fn() {
+        //     for (let i = 0; i < 9; i++) {
+        //     document.write('<br>')
+        //     for (let j = 0; j <= i; j++) {
+        //         document.write('☆')
+
+        //     }
+
+        // }
+        // }
+        // fn()
+        // fn()
+        // for (let j = 1; j<= 9; j++) {
+        //     document.write('<br>')
+        //     for (let i = j; i >0; i--) {
+
+        //         document.write(`${i}X${j}=${i * j}&nbsp;`)
+        //     }
+
+        // }
+        // function ss(aaa) {
+        //     console.log(aaa)
+        // }
+        // ss(null)
+        // ? 求 n - m 之间的数字之和
+        // let summ=0
+        // let num1=parseFloat(prompt('请输入第一个数字'))
+        // let num2=parseFloat(prompt('请输入第二个数字'))
+        // function sum(num1,num2) {
+        //     for (let  i = num1;  i <=num2;  i++) {
+        //         summ+=i
+
+        //     }
+        //     console.log(summ)
+        // }
+        // sum(num1,num2)
+        // // // ? 求圆的面积 （3.14 * r*r）
+        // function ss(r) {
+        //     let mianj= 3.14*r*r
+        //     alert(mianj)
+        // }
+        // let banjing=Number(prompt('请输入半径'))
+        // ss(banjing)
+
+        // ? 求3个数中的最大值
+        // let propss=Number(prompt)
+        // let ary=[10,20,30]
+        // let maxs=0
+        // function max(ary) {
+        //     for (let i = 0; i < ary.length; i++) {
+        //        if( ary[i]<ary[i+1]){
+        //         maxs=ary[i+1]
+        //        }
+        //         maxs=ary[i]
+        //     }
+        //     console.log(maxs);
+        // }
+        // max(ary)
+        // 冒泡
+        //     function fn(ary){
+
+        //     for(let i = 0;i < ary.length - 1; i++ ){
+        //         for(let j = 0; j < ary.length; j++){
+        //         if(ary[j] < ary[j+1]){
+        //             let c = ary[j];
+        //             ary[j] = ary[j+1];
+        //             ary[j+1] = c;
+        //         }
+        //         }
+        //     }
+
+        //     alert(ary[0])
+        // }
+        // let a = [1,2,3,4]
+        //      fn(a);
+        // 冒泡
+        //    let ss= fn([1,2,3,8,15,25,63])
+        //         console.log(ss);
+        //     function fn(ary) {
+        //         for (let i = 0; i <=ary.length-1; i++) { //排序次数
+        //            for (let j = 0; j <= ary.length-i-1; j++) {//交换次数
+        //               if (ary[j]<ary[j+1]) {
+        //                 //   交换变量
+        //                 let cc=ary[j];
+        //                  ary[j]=ary[j+1]
+        //                  ary[j+1]=cc
+        //               } 
+
+        //            }
+
+        //         }
+
+        //         alert(ary[0])
+        //         return ary
+        //     }
+        // ? 判断一个数是奇数还是偶数
+        // let numss=Number(prompt('请输入一个数'))
+
+        // function odd(numss) {
+        //     if (numss%2==0) {
+        //         alert('这是一个偶数')
+        //     }else{
+        //     alert('这是一个奇数')
+        // }}
+        // odd(numss)
+        // ? 求5个数的总和
+        // function fn(ary) {
+        //     let sum5 = 0
+        //     for (let i = 0; i < ary.length; i++) {
+        //         sum5 += ary[i]
+        //     }
+        //     console.log(sum5);
+
+        // }
+        // fn([1, 2, 5, 6, 8])
+
+        // 1. 获取数组中最大值，并返回
+
+        // function fn(ary) {
+        //     let max = 0;
+        //     for (let i = 0; i < ary.length - 1; i++) {
+        //         if (ary[i] < ary[i + 1]) {
+        //             let max = ary[i + 1]
+        //         }
+        //         max = ary[i];
+        //     }
+        //     return max
+        // }
+        // let maxx = fn([1, 2, 3, 24, 5, 6, 7, 15, 4])
+        // console.log(maxx);
+
+        // 2. 将一个数组中所有偶数添加到一个新数组中返回，并计算新数组总和。
+        // function fn(ary) {
+        //     let ary2 = []
+        //     for (let i = 0; i < ary.length; i++) {
+        //         if (ary[i] % 2 == 0) {
+        //             ary2.push(ary[i]);
+        //         }
+
+        //     }
+        //     return ary2
+        // }
+        // let newary=fn([1,2,4,5,6,7,8,9,10,12,14,16,18,20])
+        // console.log(newary);
+        // let sum2=0
+        // for (let j = 0; j < newary.length; j++) {
+        //     sum2+=newary[j];
+        // }
+        // console.log(sum2);
+
+
+
+
+        // 3  写一个函数，判断是否是闰年【能被4整除且不能被100整除，或者能被400整除】
+        // function fn(year) {
+        //     let flag=0
+        //     if (year%4==0 && year%100!=0 ||  year%400==0) {
+        //         alert('闰年')
+        //         flag=true
+        //     }else {
+        //         alert('平年')
+        //         flag=false
+        //     }
+        //     return flag
+        // }
+        // // let prop=prompt('请输入年份')
+        // // fn(prop)  
+        // // 返回值
+        // let props=fn(2018)
+        // console.log(props);
+        // 转换用户输入的秒数
+        // function fn(date) {
+        //     let h=parseInt(date/60/60) //得出小时数
+        //     h=h<10?'0'+h:h
+        //     let m=parseInt(date%3600/60)//得出分钟数
+        //      m=m<10?'0'+m:m
+        //     let ss=parseInt(date%60)//得出秒数
+        //      ss=ss<10?'0'+ss:ss
+        //     return `计算之后的时间是${h}小时${m}分钟${ss}秒`
+        // }
+        // let year=fn(prompt('请输入秒数'))
+        // document.write(year)
+        // console.log(year);
+        // 1. 封装函数, 名字为printfInput
+        // 2. 功能: 将用户输入的内容, 在页面中显示
+        // 3. 测试: 写一个输入确认框, 调用该函数时将输入内容传入, 观察页面中的内容是否与输入内容一致
+        // function printfInput(pro) {
+        //     document.write(`${pro}`)
+        // }
+        // let str = printfInput(prompt('请输入内容'))
+        // 1. 封装函数, 名字为sum
+        // 2. 功能: 根据传入的两个数, 求和并且返回求和的结果（函数必须有return返回值）
+        // 3. 测试: 调用该函数时获取结果后在控制台打印结果判断是否正确
+        //     function fn(num1,num2) {
+        //         let res=num1+num2
+        //         document.write(res)
+        //         return res
+        //     }
+        //    let sum= fn(3,5)
+        //    console.log(sum);
+        // 1. 函数名为 changeNum()
+        // 2. 调用函数时, 在控制台输出a = 1, b = 2
+        // 3. 经过函数内部处理后, 输出a = 2, b = 1
+        // 4. console.log的代码全部封装在函数内部
+        // 5. 准备代码如下, 在此基础上继续编写
+        // 6. 可以多调用两次
+        // function fn(a,b) {
+        //     let c=a;
+        //     a=b;
+        //     b=c;
+        //     document.write(`a的结果是${a}  b的结果是${b}`)
+        //     console.log('a='+a);
+        //     console.log('b='+b);
+        // }
+        // fn(1,2)
+        // fn(5,2)
+        // fn(8,2)
+        // 1. 运行程序后, 浏览器显示输入确认框(prompt)
+        // 2. 第一个输入确认框提示输入银行卡余额
+        // 3. 第二个输入确认框提示输入当月食宿消费金额
+        // 4. 第三个输入确认框提示输入当月生活消费金额
+        // 5. 输入完毕后, 在页面中显示银行卡剩余金额
+        // 6. 提示: 所有功能代码封装在函数内部（函数需要把余额返回）
+        // function fn() {
+        //   let a=  prompt('输入银行卡余额')
+        //   let b=  prompt('输入当月食宿消费金额')
+        //   let c=  prompt('输入当月生活消费金额')
+        //   let d=a-b-c
+        //   alert('剩余'+d)
+        //   return d
+        // }
+        // let balance=fn()
+        // console.log(balance);
+        // 1. 计算1 - n之间所有数的和
+        // function fn(n) {
+        //     let sum=0
+        //     for (let i = 1; i <=n; i++) {
+        //        sum+=  i;
+        //     }
+        //     return sum
+        // }
+        // let aryy=fn(parseFloat(prompt('请输入数字')))
+        // document.write(aryy)
+        // 2. 计算m - n之间所有数的和
+        // function fn(m,n) {
+        //     let sum=0
+        //     for(let i=m;i<=n;i++){
+        //         sum+=i
+        //     }
+        //     return sum
+        // }
+        // let m=parseFloat(prompt('请输入第一个数字'))
+        // let n=parseFloat(prompt('请输入第二个数字'))
+        // let summ=fn(m,n)
+        // document.write(summ)
+        // 3. 学生的分数是一个数组, 计算每个学生的总分
+            let ary=[10,20,30,4,100,50,60]
+            function fn(array) {
+                let sum=0
+                for (let i = 0; i < array.length; i++) {
+                    sum+=array[i];
+                    
+                }
+                return sum
+            }
+            let score=fn(ary)
+            document.write(`学生的单科成绩：${ary}</br>为学生的成绩为：${score}`)
+    </script>
+</body>
+
+</html>
