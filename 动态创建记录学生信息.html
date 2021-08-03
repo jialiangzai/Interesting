@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        tr {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 存储用户输入的数字
+        let pro = Number(prompt('请输入班内多少名学生'))
+        // 后期存储多个学生的信息
+        let stuAry = []
+        // 把所有学生的信息以对象的形式保存到数组中去
+        for (let i = 1; i <= pro; i++) {
+            // 创建对象保存单个学生的信息
+            let stu = {
+                stuNume: prompt('请输入第' + i + '个学生的姓名'),
+                stuAge: prompt('请输入第' + i + '个学生的年龄'),
+                stuGender: prompt('请输入第' + i + '个学生的性别'),
+                stuScore: prompt('请输入第' + i + '个学生的成绩'),
+            }
+            // 把所有的对象保存到数组中去
+            stuAry.push(stu)
+        }
+        // console.log(stuAry);
+        // 固定区域对数组进行遍历渲染页面
+        // 得到对象和对应的属性后渲染
+        document.write(`<table>`);
+        document.write(`<tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>成绩</th>
+        </tr>`);
+        // 开始遍历
+        for (let i = 0; i < stuAry.length; i++) {
+            // stuAry[i] 每个学生的信息
+            document.write(`
+            <tr>
+            <td>${i + 1}</td>
+            <td>${stuAry[i].stuNume}</td>
+            <td>${stuAry[i]['stuAge']}</td>
+            <td>${stuAry[i]['stuGender']}</td>
+            <td>${stuAry[i][' stuScore']}</td>
+        </tr>
+`)
+        }
+        document.write(`</table>`);
+    </script>
+</body>
+
+</html>

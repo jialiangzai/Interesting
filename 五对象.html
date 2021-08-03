@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        tr {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        // let ooo={
+        //     name: '小明',
+        //     age:14,
+        //     hoddy:['吃饭','游戏','打球','喝酒','抽烟','烫头'],
+        //     sings:function(){
+        //         alert('你的背包')
+        // }}
+        // ooo.name='张亮'
+        // ooo['sing']=function(){
+        //     alert('jj')
+        // }
+        // console.log(ooo)
+        let students = [
+            { name: '小明', age: 18, gender: '男', hometown: '河北省' },
+            { name: '小红', age: 19, gender: '女', hometown: '河南省' },
+            { name: '小刚', age: 17, gender: '男', hometown: '山西省' },
+            { name: '小丽', age: 18, gender: '女', hometown: '山东省' }
+        ]
+        // for (let i = 0; i < students.length; i++) {
+        //     for (key in students[i]) {
+        //         document.write(students[i][key])
+        //     }
+        //     document.write('<br>')
+
+        // }
+        // // 2
+        // for (let k = 0; k < students.length; k++) {
+        //     console.log(students[k]['name']);
+        //     console.log(students[k].age);
+        //     document.write(students[k].age)
+        // }
+        //         document.write(`<table>
+        //                 <caption>学生列表</caption>
+        //         <tr>
+        //             <th>序号</th>
+        //             <th>姓名</th>
+        //             <th>年龄</th>
+        //             <th>性别</th>
+        //             <th>家乡</th>
+        //         </tr>
+        // `);
+        // for (let i = 0; i <students.length; i++) {
+        //     document.write(`<tr>
+        //             <td>${i+1}</td>
+        //             <td>${students[i].name}</td>
+        //             <td>${students[i]['age']}</td>
+        //             <td>${students[i].gender}</td>
+        //             <td>${students[i]['hometown']}</td>
+        //         </tr>
+        // `)
+
+        // }
+        //         document.write('</table>')
+        // console.log( Math.PI)
+        // console.log( Math.ceil(Math.PI))
+        // console.log( Math.floor(Math.PI))
+        //  let sum=-200;
+        // console.log( Math.abs(sum))
+        // console.log(Math.max(1,2,516,1,6,489,61,1561))
+        // console.log(Math.pow(10,10))
+        // console.log(Math.random())
+        // 随机点名     数组根据随机的数显示组值
+        // let ary=['佐菲','赛罗','泰罗','杰克','赛文','迪迦','赵云', '黄忠', '关羽','张飞','刘备','马超']
+        // function getRandom(min,max) {
+        // let random=Math.floor(Math.random()*(max-min+1)+min)
+        //   return  random
+        // }
+        //  ary= ary.splice(random,1)
+        // document.write(ary[getRandom(0,ary.length-1)])
+        // 程序随机生成 1~10 之间的一个数字，用户输入一个数字 思路：首先系统要随机生成一个随机数这里两种方式，函数记得return然后是循环不断弹出的一个提示框这个不能写在外面不然不会循环，循环次数不定时while条件是true，然后分情况判断最后记得相等时候把循环终止用break
+        // let random=Math.floor(Math.random()*10+1)
+        // function getRandom(min,max) {
+        //     return Math.floor(Math.random()*(max-min+1)+min)
+        // }
+        // let random=getRandom(1,10)
+        // while (true) {
+        //     let num = +prompt('请您输入一个数字：')
+        //     if (random>num) {
+        //         alert('数字猜小了，继续猜')
+        //     } else if(random<num) {
+        //         alert('数字猜大了，继续猜')
+        //     } else {
+        //         alert ('猜对了')
+        //         break 
+        //     }
+        // }
+        // 关于遍历数组中对象渲染页面问题首先要把页面固定的部分写一下其中，再写对象部分遍历数组得到对象获取值和属性模板字符拼接
+        // 点名: 每次刷新网页运行, 在控制台 随机输出一位同学的名字 ["老赵", "老李", "小传", "小黑"]，如果输出了，则数组中删除这个名字,如果是随机在数组进行的抽取取值那么Math.random*ary.length自己总结的
+        // 随机技巧：let arr = ['老赵', '老李', '老l', '小川']
+        // let random = Math.floor(Math.random() * (arr.length))
+        // document.write(arr[random])
+        // arr.splice(random, 1)
+        // console.log(arr);
+        // let ary=["老赵", "老李", "小传", "小黑"]
+        //   let random=   Math.floor(Math.random()*ary.length);
+        //  document.write(ary[random])
+        // ary.splice(random,1)
+
+        // 1. 声明一个变量per, 类型为对象类型
+        // 2. 该对象的属性为性别, 年龄, 爱好(3个)
+        // 3. 该对象的方法有 说话, 吃饭(2个)
+        // 4. 在控制台分别调用该对象的属性和方法
+        // let per = {
+        //     sex: '男',
+        //     age: '12',
+        //     hobby: '洗澡',
+        //     speak: function () {
+        //         document.write(`speak方法被调用了--- <br>`)
+        //     },
+        //     eat: function () {
+        //         document.write(`eat方法被调用了---`)
+        //     }
+        // }
+        // document.write(`姓名:${per.sex} <br>`)
+        // document.write(`姓名:${per.age}<br>`)
+        // document.write(`姓名:${per.hobby}<br>`)
+        // per.speak()
+        // per.eat()
+        // 猜数字游戏，设定次数，最多猜8次
+        // function random(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1) + min)
+        // }
+        // let amount = random(1, 20)
+        // let j=1;
+        // while (j < 8) {
+        //     let pro = +prompt('请输入数字');
+        //     if (pro > amount) {
+        //         alert('大了宝贝')
+        //     } else if (pro < amount) {
+        //         alert('小了宝贝')
+        //     } else {
+        //         alert('中了买彩票去吧！')
+        //         // 退出循环
+        //         break;
+        //     }
+
+        //     j++
+        // }
+        // if (j > 8) {
+        //     alert('太笨了，这都猜不到！O(∩_∩)O')
+        // }
+    </script>
+</body>
+
+</html>
