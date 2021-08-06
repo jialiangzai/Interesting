@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            height: 500px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+            background-color: #ddfa;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+        .border {
+            border-radius: 50%;
+        }
+    </style> -->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav {
+            height: 60px;
+            line-height: 60px;
+            background-color: #ccc;
+        }
+
+        .nav ul {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav a {
+            text-decoration: none;
+            display: block;
+            height: 60px;
+            padding: 0 20px;
+        }
+
+        .active {
+            background-color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="javascript:;" class="active">首页</a></li>
+            <li><a href="javascript:;">联系我们</a></li>
+            <li><a href="javascript:;">关于我们</a></li>
+            <li><a href="javascript:;">课程介绍</a></li>
+        </ul>
+    </div>
+    <!-- <div class="box "></div> -->
+    <!-- <textarea name="deal" id="deal" cols="30" rows="10">
+        用户注册协议
+        欢迎注册成为京东用户！在您注册过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，请您务必仔细阅读、充分理解协议中的条款内容后再点击同意（尤其是以粗体或下划线标识的条款，因为这些条款可能会明确您应履行的义务或对您的权利有所限制）。
+        【请您注意】如果您不同意以下协议全部或任何条款约定，请您停止注册。您停止注册后将仅可以浏览我们的商品信息但无法享受我们的产品或服务。如您按照注册流程提示填写信息，阅读并点击同意上述协议且完成全部注册流程后，即表示您已充分阅读、理解并接受协议的全部内容，并表明您同意我们可以依据协议内容来处理您的个人信息，并同意我们将您的订单信息共享给为完成此订单所必须的第三方合作方（详情查看)
+    </textarea>
+    <br>
+    <input type="button" id="btn" value="我同意该协议(10)"></input>
+    <div class="box">
+        <div class="pic"></div>
+        <div class="text"></div>
+    </div> -->
+    <!-- <br>
+    <input type="text" id="name" placeholder="用户名">
+    <br>
+    <input type="text" id="pwd" placeholder="密码">
+    <br>
+    <input type="button" id="btn1" value="登录">
+    <div id="colo" style="width:200px;height:150px;background: red;"></div> -->
+    <!-- <h2>随机点名</h2>
+    <div class="box">
+        <span>同学姓名：</span>
+        <div class="qs"></div>
+    </div>
+    <div class="btns">
+        <button>开始</button>
+        <button>结束</button>
+    </div> -->
+
+    <script>
+        // let btn=document.getElementById('btn')
+        // let i=10;
+        // // fn()
+        //     let si= setInterval(fn,1000);
+
+        // function fn() {
+        //     i--;
+        //     btn.disabled=true;
+        //     btn.value=`我同意该协议(${i})`
+        //     if(i<=0){
+        //         clearInterval(si)
+        //         btn.value=`我已阅读该协议`
+        //         btn.disabled=false
+        //     }
+        // }
+        // prompt('你好')
+        // let btn1=document.getElementById('btn1');
+        // btn1.addEventListener('click',function () {
+        //     let name=document.getElementById('name')
+        //     let pwd=document.getElementById('pwd')
+        //     let uname_n=name.value
+        //     let uname_p=pwd.value
+        //     if (uname_n!='admin'||uname_p!=888){
+        //       return  alert('请输入正确的密码')
+        //     }
+        //     alert('登录成功')
+
+        // })
+        // let colo=document.getElementById('colo');
+        // let colo = document.querySelector('#colo')
+        // let colo = document.querySelectorAll('#colo')
+        // let colo = document.getElementsByTagName('div')
+
+        // colo.addEventListener('click', function () {
+        //     this.style.backgroundColor = 'pink'
+        // })
+        // 
+        // let qs = document.querySelector('.qs')
+        // let timer
+        // let btnsstart = document.querySelector('.btns button:nth-child(1)')
+        // let btnsend = document.querySelector('.btns button:nth-child(2)')
+        // let ary = ['初代', '艾克斯', '泽塔', '欧布', '银河', '泰罗', '迪迦', '赛文', '赛罗', '捷德']
+        // function getRandom(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1) + min)
+        // };
+        // btnsstart.addEventListener('click',function () {
+        //     // 清除多个狂点定时器，也可以让按钮点击后禁用
+        //     clearInterval(timer)
+        //     function fn() {
+        //         let i=getRandom(0,ary.length-1)
+        //         qs.innerHTML=ary[i]
+        //     }
+        //       timer=  setInterval(fn,150);
+
+        // })
+        // btnsend.addEventListener('click',function () {
+        //     clearInterval(timer)
+        // })
+
+
+
+
+
+
+
+
+
+       // 三秒后停止定时器
+        // function fn() {
+
+        //     console.log('hh');
+        //     let i = 0
+        // i++;
+        //     if (i >= 3) {
+        //         clearInterval(sm)
+        //     }
+        // }
+        // let sm = setInterval(fn, 1000)
+
+            // let box=document.querySelector('.box')
+            // box.className='box border'
+
+        // 获取标签对象、添加点击事件、添加类名、排他思想
+        let alinkes=document.querySelectorAll('a')
+            for (let i = 0; i < alinkes.length; i++) {
+                alinkes[i].addEventListener('click',function (){
+                    for (let k = 0; k < alinkes.length; k++) {
+                        alinkes[k].className=''
+                        
+                    } 
+                    this.className='active'
+                 })
+                
+            }
+
+    </script>
+</body>
+
+</html>

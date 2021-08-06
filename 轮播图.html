@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-box {
+            width: 700px;
+            height: 320px;
+            margin: 50px auto 0;
+            background: #000;
+            position: relative;
+        }
+
+        .img-box .tip {
+            width: 700px;
+            height: 53px;
+            line-height: 53px;
+            position: absolute;
+            bottom: 0px;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10;
+        }
+
+        .img-box .tip h3 {
+            width: 82%;
+            margin: 0;
+            margin-right: 20px;
+            padding-left: 20px;
+            color: #98E404;
+            font-size: 28px;
+            float: left;
+            font-weight: 500;
+            font-family: "Microsoft Yahei", Tahoma, Geneva;
+        }
+        /* 信息 */
+        .img-box .tip a {
+            width: 30px;
+            height: 29px;
+            display: block;
+            float: left;
+            margin-top: 12px;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-box">
+        <img id="pic" src="./1/b01.jpg" alt="第1张图的描述信息">
+        <div class="tip">
+            <h3 id="text">第1张图的描述信息</h3>
+        </div>
+    </div>
+    <script>
+        let pics=document.getElementById('pic')
+        let text=document.querySelector('#text')
+        let i=1;
+        // 定时器函数
+        setInterval(fn,2000)
+        function fn() {
+            
+            if(i==9){
+                i=1
+            }i++;
+            pics.src=`1/b0${i}.jpg`
+            text.innerText=`第${i}张图的描述信息`
+        }
+        
+    </script>
+</body>
+
+</html>
