@@ -1,0 +1,9 @@
+1.打开launch.json，更改"configurations"中的"url"中的端口号为Live Server的端口号
+2.window.event.returnValue=false;
+3.return false;
+解读：
+首先我们要清楚returnValue是IE的一个属性，如果设置了该属性，它的值比事件句柄的返回值优先级要高，把它的值设置为false，可以取消发生事件源元素的默认动作；return false就是返回一个false值returnValue：设置或获取事件的返回值。
+进一步可以这样理解：event对象的returnValue属性一般为true，表示脚本处理完自己的工作由元素来处理事件，通过该属性可以取消事件处理程序中调用函数的默认操作window.event.returnValue=false放在提交表单中的onclick事件中则不会提交表单，如果放到超链接中则不执行超链接。
+return false：禁止一些浏览器的默认行为，由于原先默认的行为是ture
+前者是在先对函数的内容的判断上是否执行下去的，但是，后者则不会进行判断就直接执行下去了
+常用第二种
