@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+            height: 400px;
+        }
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: aquamarine;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 有input属性为file的按钮 和预览的盒子 -->
+    <input type="file" multiple>
+    <img src="" alt="" style="display: none;">
+    <div class="box"></div>
+    <script>
+        // 读取的内容又称为加载内容必须在load事件中，此时的事件源是读取对象（读取器）
+
+        let btn = document.querySelector('input')
+        let box = document.querySelector('.box')
+        // 验证用户是否选择文件chang事件
+        // btn.onchange = function () {
+        //     // 获取文件
+        //     let file = this.files[0]
+        //     // 开始读取 使用文件读取对象    FileRead() 
+        //     // 使用前要先创建对象
+        //     let reader = new FileReader()
+        //     // 先以图片文件为例路径 运用读取文件对象的方法
+        //     // let res=read.readAsDataURL(file)
+        //     reader.readAsDataURL(file);
+        //     // 此时读取到的是图片的路径 
+        //     // 现在可以读取结束，要把读取的结果返回用对象的result即read.result获取
+        //     // 前提是要在读取器的load加载事件中
+        //     reader.onload = function () {
+        //         let readu = reader.result
+        //         document.querySelector('img').style.display = 'block'
+        //         document.querySelector('img').src = readu
+        //     }
+        // }
+        // 如果用户长传的是文本文件要读取文件的内容只需要把读取方式修改一下就行了
+        btn.onchange = function () {
+            let file = this.files[0]
+            let reader = new FileReader()
+            reader.readAsText(file)
+            reader.onload = function () {
+                let readu = reader.result
+                // console.log(readu);
+                box.innerHTML = readu
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
