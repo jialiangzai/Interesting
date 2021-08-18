@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: dashed 2px dimgrey;
+            margin: 100px auto;
+            text-align: center;
+            user-select: none;
+            line-height: 300px;
+        }
+
+        .text {
+            display: none;
+            width: 600px;
+            margin: 20px auto 20px;
+            border: 2px solid beige;
+            overflow: hidden
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">请将文件拖拽到此处</div>
+    <div class="text"></div>
+    <script>
+        // 鼠标拖拽事件首先要有拖拽的目标区域 然后元素执行拖和拽事件但是拖拽事件中阻止浏览器默认跳转行为事件对象参数.preventDefault() 当用户释放鼠标后才会执行读取等相关操作
+
+        let box = document.querySelector('.box')
+        let text = document.querySelector('.text')
+        // 
+        box.ondragover = function (e) {
+            e.preventDefault()
+            // console.log(123);
+        }
+        box.ondrop = function (e) {
+            e.preventDefault()
+            //通过事件对象参数的数据传输拿 在此解释 拿来吧你 fer是拿，拿来的意思 获取用户放的文件
+            let file = e.dataTransfer.files[0]
+            //    创建读取对象
+            let reader = new FileReader()
+            // 开始读取
+            reader.readAsText(file)
+            // 读取成功后返回到了对象的result中 但是结果只能在对象的onload事件中加载
+            reader.onload = function () {
+                let su = this.result
+                // 渲染到盒子中
+                text.style.display = 'block'
+                text.innerHTML = su
+            }
+        }
+
+    </script>
+</body>
+
+</html>
