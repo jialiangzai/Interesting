@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody td {
+            text-align: center;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll" />全
+                        <input type="button" id="j_cbinvert" value="反选" />
+                    </th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>iPhone8</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>iPhone8</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>iPhone8</td>
+                    <td>10000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let ja = document.getElementById('j_cbAll')
+        let jo = document.querySelectorAll('#j_tb input')
+        let ji = document.getElementById('j_cbinvert')
+        // 全选
+        ja.onclick = function () {
+            let jad = this.checked
+            for (let m = 0; m < jo.length; m++) {
+                jo[m].checked = jad
+            }
+        }
+        // 单项
+        // 先获取每一个复选框
+        function dan() {
+            for (let i = 0; i < jo.length; i++) {
+                // 点击事件
+                jo[i].onclick = function () {
+                    // 精华 把状态赋值变量
+                    let flag = true
+                    //  遍历每一个复选框的状态 目的判断是否有未选中的复选框
+                    for (let k = 0; k < jo.length; k++) {
+                        //   let jib= this.checked 禁止使用 断点查看
+                        if (jo[k].checked == false) {
+                            flag = false
+                        }
+                        ja.checked = flag
+                    }
+
+                }
+
+            }
+
+        }
+        dan()
+        // 反选
+        ji.onclick = function () {
+            for (let l = 0; l < jo.length; l++) {
+                //     if (jo[l].checked) {
+                //         jo[l].checked = false
+                //     }
+                //     else {
+                //         jo[l].checked = true
+                //     }
+                jo[l].checked = !jo[l].checked
+                jo[l].onclick()
+            }
+        }
+            
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
