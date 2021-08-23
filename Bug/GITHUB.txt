@@ -1,0 +1,10 @@
+https://fastly.net.ipaddress.com/github.global.ssl.fastly.net
+https://github.com.ipaddress.com/
+打开本地host文件 C:\Windows\System32\drivers\etc
+
+
+
+
+第二种更新DNS缓存
+
+若还是不能访问，打开CMD运行如下命令 ipconfig /flushdns 再试一下

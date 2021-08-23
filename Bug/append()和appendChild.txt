@@ -1,0 +1,10 @@
+js里用append()和appendChild有什么区别？
+parentNode.append()是还在试用期的方法，有兼容问题。
+
+是在parendNode节点中最后一个子节点后插入新Node或者DOMString（字符串，插入后为Text节点）
+
+与 parentNode.appendChild() 的 区别在于：
+parentNode.append()可以同时传入多个节点或字符串，没有返回值；
+而parentNode.appendChild()只能传一个节点，且不直接支持传字符串
+
+(需要parentNode.appendChild(document.createTextElement('字符串'))代替)，返回追加的Node节点。
