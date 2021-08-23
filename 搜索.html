@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 980px;
+            margin: 50px auto;
+        }
+
+        .title {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            float: left;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .pname {
+            float: left;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid red;
+            text-align: center;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box">
+            <div class="title">
+                <div class="price">
+                    按照价格查询:
+                    <input type="text" class="min"> - <input type="text" class="max">
+                    <input type="button" value="查询" class="pBtn">
+                    <input type="button" value="全部" class="rBtn">
+                </div>
+            </div>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>产品名称</th>
+                            <th>价格</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+
+                </table>
+            </div>
+        </div>
+        <script>
+            //数据
+            let data = [
+                {
+                    id: 1,
+                    pname: '小米手机',
+                    price: 1299
+                }, {
+                    id: 2,
+                    pname: '华为手机',
+                    price: 4299
+                }, {
+                    id: 3,
+                    pname: '华为平板',
+                    price: 12999
+                }, {
+                    id: 4,
+                    pname: '苹果手机',
+                    price: 5299
+                }, {
+                    id: 6,
+                    pname: '锤子手机',
+                    price: 998
+                }, {
+                    id: 7,
+                    pname: '一加手机',
+                    price: 4399
+                }, {
+                    id: 8,
+                    pname: '诺基亚手机',
+                    price: 456
+                }
+            ]
+
+            // 首先表格内的数据不是写死的
+            // 获取表格
+
+            let tb = document.querySelector('.content tbody')
+            let rBtn = document.querySelector('.rBtn')
+            // 清空tb 清空之前记录这道题是静态成员但是如果更新为动态就要
+            loadd(data)
+            function loadd(datas) {
+                // 点击全部按钮就会显示所有手机这里我们可以把上面遍历封装函数点击按钮调用
+                // 参数和返回值不需要
+                tb.innerHTML = '';
+                datas.forEach(function (item, index) {
+                    // 创建tr
+                    let trs = document.createElement('tr')
+                    trs.innerHTML = `
+                <td>${item.id}</td>
+			    <td>${item.pname}</td>
+		 		<td>${item.price}</td>
+            `
+                    tb.appendChild(trs)
+                })
+
+            }
+            rBtn.onclick=function(){
+                loadd(data)
+            }
+
+
+            // 在输入框输入价格点击查询就会筛选对应的行首先要先获取用户在输入框的值value
+            let min=document.querySelector('.min')
+            let max=document.querySelector('.max')
+            let pBtn=document.querySelector('.pBtn')
+            pBtn.addEventListener('click',function () {
+                let minv=min.value
+                let maxv=max.value
+                // 遍历筛选,有返回值,返回的是一个满足返回值的新数组
+               let datav= data.filter((item,index)=>{
+                  return  item.price>=minv && item.price<=maxv
+               })
+            //    现在筛选出来新数组让他在页面显示就可以了
+            loadd(datav)
+            })
+
+        </script>
+</body>
+
+</html>
