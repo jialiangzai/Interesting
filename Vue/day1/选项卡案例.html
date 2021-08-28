@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    .tab ul {
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tab ul li {
+      box-sizing: border-box;
+      padding: 0;
+      float: left;
+      width: 100px;
+      height: 45px;
+      line-height: 45px;
+      list-style: none;
+      text-align: center;
+      border-top: 1px solid blue;
+      border-right: 1px solid blue;
+      cursor:pointer
+    }
+
+    .tab ul li:first-child {
+      border-left: 1px solid blue;
+    }
+
+    .tab ul li.active {
+      background-color: orange;
+    }
+
+    .tab div {
+      width: 500px;
+      height: 300px;
+      display: none;
+      text-align: center;
+      font-size: 30px;
+      line-height: 300px;
+      border: 1px solid blue;
+      border-top: 0px;
+    }
+
+    .tab div.current {
+      display: block;
+    }
+
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div id="app">
+    <div class="tab">
+      <ul>
+        <li v-on:click='change(index)' :class='currentIndex==index?"active":""' :key='item.id' v-for='(item,index) in list'>{{item.title}}</li>
+      </ul>
+      <div :class='currentIndex==index?"current":""' :key='item.id' v-for='(item, index) in list'>
+        <img :src="item.path">
+      </div>
+    </div>
+  </div> -->
+  <!-- <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript">
+    /*
+      
+    */
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        currentIndex: 0, // 选项卡当前的索引
+        list: [{
+          id: 1,
+          title: 'apple',
+          path: 'img/apple.png'
+        },{
+          id: 2,
+          title: 'orange',
+          path: 'img/orange.png'
+        },{
+          id: 3,
+          title: 'lemon',
+          path: 'img/lemon.png'
+        }]
+      },
+      methods: {
+        change: function(index){
+          // 在这里实现选项卡切换操作：本质就是操作类名
+          // 如何操作类名？就是通过currentIndex
+          this.currentIndex = index;
+        }
+      }
+    });
+  </script> -->
+  <div id="app">
+    <div class="tab">
+      <ul>
+        <!-- 标题 -->
+        <!-- 添加类名时候首先要判断当前的index和选项卡得index是否一致判断此元素 currentIndex     ===  index  如果相等  则添加类名 active  否则 添加 空类名-->
+        <!--  给每一个tab栏添加事件，
+          点击每一个tab栏 当前的高亮 其他的取消高亮 给每一个li添加点击事件   
+          让当前的索引 index  和  当前 currentIndex 的  值 进项比较 如果相等 则当前li  添加active 类名 当前的 li 高亮  当前对应索引的 div 添加 current 当前div 显示 其他隐藏 -->
+        <li v-on:click='change(index)' v-cloak :key="item.id" v-for='(item,index) in list'  :class='currentIndex==index?"active":""'>{{item.title}}</li>
+      </ul>
+      <!-- 图片 -->
+      <div :key="item.id" v-for='(item,index) in list' :class='currentIndex==index?"current":""'>
+        <img :src="item.path" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- 分析： -->
+  <script src="./vue.js"></script>
+  <script>
+    // 把数据替换到页面内上
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        // 设置默认显示的当前index
+        currentIndex:0,
+        list: [{
+          id: 1,
+          title: 'apple',
+          path: 'img/apple.png'
+        }, {
+          id: 2,
+          title: 'orange',
+          path: 'img/orange.png'
+        }, {
+          id: 3,
+          title: 'lemon',
+          path: 'img/lemon.png'
+        }]
+      },
+      methods: {
+        change:function(index){
+           // 通过传入过来的索引来让当前的  currentIndex  和点击的index 值 相等 
+           //  从而实现 控制类名  
+           this.currentIndex=index  
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
