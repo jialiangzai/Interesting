@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+            outline-style: none;
+        }
+
+        .box {
+            width: 380px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin-left: 100px;
+            margin-top: 100px;
+            float: left;
+        }
+
+        .public {
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .public input {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        .public input:focus {
+            border-color: orange;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            resize: none;
+            padding-left: 20px;
+            padding-top: 20px;
+            box-sizing: border-box;
+
+        }
+
+        textarea:focus {
+            border-color: orange;
+        }
+
+        .btn {
+            display: block;
+            width: 340px;
+            height: 40px;
+            margin: 20px auto;
+            font-size: 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .show_stu {
+            float: right;
+            margin-right: 100px;
+            margin-top: 100px;
+
+            width: 500px;
+            height: 400px;
+            border: 1px solid #ccc;
+
+            overflow: auto;
+        }
+
+        .title {
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .title ul {
+            /* width: 100%; */
+            display: flex;
+        }
+
+        .title li {
+            flex: 1;
+            text-align: center;
+            list-style: none;
+        }
+
+
+
+        .content li {
+            margin-top: 10px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px dashed #ccc;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: flex;
+        }
+
+
+        .content li span {
+            flex: 1;
+            text-align: center;
+        }
+
+        .content li a:last-child {
+
+            flex: 1;
+            color: blue;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="stu_name public">
+            <span>学生姓名:</span>
+            <input type="text">
+        </div>
+        <div class="stu_score public">
+            <span>考试成绩:</span>
+            <input type="text">
+        </div>
+        <div class="msg public">
+            <span>评语:</span>
+            <textarea maxlength="20"></textarea>
+        </div>
+        <input type="button" value="添加" class="btn">
+    </div>
+    <div class="show_stu">
+        <div class="title">
+            <ul>
+                <li>学生姓名</li>
+                <li>考试成绩</li>
+                <li>评语</li>
+                <li>操作</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <ul>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 结果: 要将数据保存到本地, 最后删除也是要删除本地存储中的数据 
+
+        // 分析步骤:
+        // 1. 点击添加,创建一个学生对象,根据类创建
+        // 2. 由于点击多次,代表创建多个学生对象,提前先将学生对象先保存到一个数组中,然后再保存到本地
+
+        // 用类创建对象添加到数组上
+        class Students {
+            constructor(stuName, stuScore, stuMsg) {
+                // 为对象添加属性
+                this.stuName = stuName;
+                this.stuScore = stuScore;
+                this.stuMsg = stuMsg;
+            }
+        }
+        //    获取元素
+        let ul = document.querySelector('.content ul')
+        let stu_name = document.querySelector('.stu_name input')
+        let stu_score = document.querySelector('.stu_score input')
+        let textarea = document.querySelector('textarea');
+        let btn = document.querySelector('.btn');
+        btn.onclick = function () {
+            // 获取内容
+            let stu_name_v = stu_name.value;
+            let stu_score_v = stu_score.value;
+            let stuMsg_v = textarea.value;
+            // 创建对象
+            let stu = new Students(stu_name_v, stu_score_v, stuMsg_v);
+            // 将学生对象添加到一个数组中,不能定义一个空数组,因为每次重新打开页面,数组中的内容又清空了
+            // 每次点击添加按钮的时候,都应该将学生对象保存到本地存储中对应的数据中
+            let res = getData()
+            // 将学生对象添加到数组中保存本地存储
+            res.push(stu)
+            localStorage.setItem('stuList', JSON.stringify(res));
+            console.log(res);
+            // 创建元素
+            loadData()
+        }
+        function getData() {
+            // 先获取本地存储中的数据
+            let res = localStorage.getItem('stuList');
+            // 如果没有数据,返回空
+            if (res == null) {
+                return [];
+            } else {
+                // 如果有数据,返回原来的数据
+                return JSON.parse(res);
+            }
+        }
+        function loadData() {
+            // 清空ul，避免二次遍历
+            ul.innerHTML=''
+            //    根据本地存储的数据遍历数组
+            let res = getData()
+            res.forEach(function (item, index) {
+                let li = document.createElement('li')
+                li.innerHTML = `
+                            <span>${item.stuName}</span>
+                               <span>${item.stuScore}</span>
+                               <span>${item.stuMsg}</span>
+                               <a href="javascript:;" data-myindex="${index}">删除</a>
+          `
+                ul.insertBefore(li, ul.children[0])
+            })
+        }
+        // 页面加载初始化
+        loadData()
+        // 删除功能       
+        // a) 先将数组的索引以自定义属性的方式保存到标签身上
+        // b) 点击删除按钮的时候,获取自定义属性值===> 数组中的索引值
+        // 事件委托
+        ul.onclick=function(e){
+            // 获取真正的事件源
+            let target=e.target
+            // 判断当前事件源是否是删除是的话执行不是就不执行
+            if (target.nodeName=='A') {
+                // 获取到a所在li的index
+                let xx=target.getAttribute('data-myindex');
+                // 从数组中删除
+                let res=getData()
+
+                res.splice(xx,1)
+                // 更新本地存储
+                localStorage.setItem('stuList',JSON.stringify(res))
+                // 让页面重新加载
+                loadData()       
+            }
+        }
+    </script>
+</body>
+
+</html>
