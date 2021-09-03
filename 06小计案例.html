@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+        }
+
+        .box {
+            width: 980px;
+            margin: 100px auto;
+        }
+
+        .title {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: #ccc;
+            font-size: 14px;
+            font-family: '微软雅黑';
+        }
+
+        .title .bar {
+            float: left;
+        }
+
+        .ckAll {
+            margin-left: 20px;
+        }
+
+        .price {
+            margin-left: 452px;
+            margin-right: 100px;
+        }
+
+        .totle {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        .content {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .item {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin-bottom: 2px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .item .ck {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .bot {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: #ccc;
+            font-size: 14px;
+            font-family: '微软雅黑';
+        }
+
+        .bot .ck {
+            margin-left: 20px;
+        }
+
+        .active {
+            background-color: #fff4e8;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .imgShow {
+            border: 1px solid #ccc;
+            margin-left: 80px;
+            margin-top: 8px;
+        }
+
+        .text {
+            margin-top: 8px;
+            line-height: 40px;
+            margin-left: 10px;
+            font-size: 14px;
+
+        }
+
+        .s-price {
+            line-height: 100px;
+            margin-left: 42px;
+            font-size: 14px;
+            color: orange;
+        }
+
+        .num1 {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-top: 30px;
+            margin-left: 48px;
+        }
+
+        .sub {
+            width: 20px;
+            height: 30px;
+            display: block;
+            float: left;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .num1 input {
+            border: 0 none;
+            outline-style: none;
+            width: 60px;
+            height: 30px;
+            float: left;
+            text-align: center;
+        }
+
+        .add {
+            width: 20px;
+            height: 30px;
+            display: block;
+            float: left;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-left: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .t_price {
+            line-height: 100px;
+            font-size: 14px;
+            margin-left: 40px;
+            color: red;
+        }
+
+        .del {
+            line-height: 100px;
+            font-size: 14px;
+            margin-left: 60px;
+        }
+
+        .del a {
+            text-decoration: none;
+            color: #888;
+        }
+
+        .del a:hover {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+     <div class="box">
+         <div class="title">
+             <!-- 单价 -->
+             <div class="bar price">单价</div>
+
+             <!-- 数量 -->
+             <div class="bar num">数量</div>
+
+             <!-- 小计 -->
+             <div class="bar totle">小计</div>
+
+             <!-- 操作 -->
+             <div class="bar done">操作</div>
+         </div>
+         <div class="content">
+             <div class="item">
+                 
+                 <!-- 图片展示 -->
+                 <div class="imgShow left">
+                     <img src="imgs/hr.jpg" alt="">
+                 </div>
+
+                 <!-- 文字内容 -->
+                 <div class="text left">
+                     <p>荣耀20i 3200万AI自拍 超广角三摄 全</p>
+                     <p>荣耀20i 3200万AI自拍 超广角三摄 全</p>
+                 </div>
+
+                 <!-- 单价 -->
+                 <div class="s-price left">
+                     &yen; <strong>1299.00</strong>
+                 </div>
+
+                 <!-- 数量 -->
+                 <div class="num1 left">
+                     <a href="javascript:;" class="sub">-</a>
+                     <input type="text" value="1">
+                     <a href="javascript:;" class="add">+</a>
+                 </div>
+
+                 <!-- 总结 -->
+                 <div class="t_price left">
+                     &yen;<strong>1299.00</strong>
+                 </div>
+
+                 <!-- 删除 -->
+                 <div class="del left">
+                     <a href="javascript:;">移除购物车</a>
+                 </div>
+             </div>
+             <div class="item">
+                
+                 <!-- 图片展示 -->
+                 <div class="imgShow left">
+                     <img src="imgs/hr.jpg" alt="">
+                 </div>
+
+                 <!-- 文字内容 -->
+                 <div class="text left">
+                     <p>荣耀20i 3200万AI自拍 超广角三摄 全</p>
+                     <p>荣耀20i 3200万AI自拍 超广角三摄 全</p>
+                 </div>
+
+                 <!-- 单价 -->
+                 <div class="s-price left">
+                     &yen;<strong>1299.00</strong>
+                 </div>
+
+                 <!-- 数量 -->
+                 <div class="num1 left">
+                     <a href="javascript:;" class="sub">-</a>
+                     <input type="text" value="1">
+                     <a href="javascript:;" class="add">+</a>
+                 </div>
+
+                 <!-- 总结 -->
+                 <div class="t_price left">
+                     &yen;<strong>1299.00</strong>
+                 </div>
+
+                 <!-- 删除 -->
+                 <div class="del left">
+                     <a href="javascript:;">移除购物车</a>
+                 </div>
+             </div>
+             <div class="item">
+                
+                 <!-- 图片展示 -->
+                 <div class="imgShow left">
+                     <img src="imgs/hr.jpg" alt="">
+                 </div>
+
+                 <!-- 文字内容 -->
+                 <div class="text left">
+                     <p>荣耀20i 3200万AI自拍 超广角三摄 全</p>
+                     <p>荣耀20i 3200万AI自拍 超广角三摄 全</p>
+                 </div>
+
+                 <!-- 单价 -->
+                 <div class="s-price left">
+                     &yen;<strong>1299.00</strong>
+                 </div>
+
+                 <!-- 数量 -->
+                 <div class="num1 left">
+                     <a href="javascript:;" class="sub">-</a>
+                     <input type="text" value="1">
+                     <a href="javascript:;" class="add">+</a>
+                 </div>
+
+                 <!-- 总结 -->
+                 <div class="t_price left">
+                     &yen;<strong>1299.00</strong>
+                 </div>
+
+                 <!-- 删除 -->
+                 <div class="del left">
+                     <a href="javascript:;">移除购物车</a>
+                 </div>
+             </div>
+         </div>
+         <div class="bot">
+             
+         </div>
+     </div>
+
+     <script src="./jQuery.min.js"></script>
+     <script>
+       
+
+       
+        
+        //数量增加减少功能
+        (function(){
+            //计算总结
+            var money = 0;
+            // 增加
+            $('.add').click(function(){
+                //获取输入框中的值
+                var num = Number($(this).siblings('input').val());
+                    num++;
+                //将累加后的值赋值给输入框(赋值给当前按钮对应的输入框)
+                $(this).siblings('input').val(num);
+
+                //计算价格
+                money = num * $(this).parent().siblings('.s-price').find('strong').text();
+                //将价格赋值给总价标签
+                $(this).parent().siblings('.t_price').find('strong').text(money.toFixed(2));
+            });
+
+            //减少
+            $('.sub').click(function(){
+                //获取输入框中的值
+                var num = Number($(this).siblings('input').val());
+                if(num <= 0) {
+                    return;
+                }
+                num--;
+                $(this).siblings('input').val(num);
+                //计算价格
+                money = num * $(this).parent().siblings('.s-price').find('strong').text();
+                //将价格赋值给总价标签
+                $(this).parent().siblings('.t_price').find('strong').text(money.toFixed(2));
+            })    
+        })();
+        
+     
+     </script>
+</body>
+</html>
