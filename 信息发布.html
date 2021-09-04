@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .msg {
+            width: 980px;
+            padding-bottom: 10px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+        }
+
+        textarea {
+            width: 880px;
+            height: 100px;
+            border: 0 none;
+            border: 1px solid orange;
+            resize: none;
+            outline-style: none;
+            border-radius: 10px;
+            display: block;
+            margin: 50px auto 0 auto;
+            padding-left: 20px;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            width: 80px;
+            height: 40px;
+            display: block;
+            float: right;
+            margin-right: 50px;
+            margin-top: 20px;
+            background-color: blue;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            line-height: 40px;
+            border-radius: 10px;
+            clear: both;
+
+        }
+
+        .content {
+            width: 880px;
+            margin: 80px auto 0 auto;
+        }
+
+        .item {
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px dashed #ccc;
+            padding-left: 20px;
+        }
+
+        .item p {
+            float: left;
+        }
+
+        .del {
+            float: right;
+            text-decoration: none;
+            color: #999;
+        }
+
+        .del:hover {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="msg">
+        <textarea></textarea>
+        <a href="javascript:;" class="btn">发布</a>
+        <div class="content">
+        </div>
+    </div>
+    <script src="../../jQuery.min.js"></script>
+    <script>
+        // $('.btn').on('click',function () {
+        //     let li=$('<li class="item"></li>')
+        //     li.html(`<span>${$('textarea').val()}</span> <a href="">删除</a>`)
+        //     $('.content').append(li)
+        //     $('.content').append(li)
+        //     console.log($('.content').append(li));
+        // })
+        $('.btn').click(function () {
+            let v_text = $('textarea').val()
+            if (v_text == '') {
+                return
+            }
+            let div = $('<div class="item"></div>')
+            //    $('div').prop('class','item')  $('div').addClass('item')
+            div.html(`<p>${v_text}</p> <a href="javascript:;" class="del">删除</a>`)
+            $('.content').append(div)
+            // 赋值为空
+            $('textarea').val('')
+        })
+        $('.content').on('click', '.del', function () {
+            if (confirm('确定删除吗？')) {
+                //都是动态所以parents('.item')
+                $(this).parents('.item').stop().fadeOut(500,function (){
+                    $(this).remove()
+                })//只是改变了透明度标签实际还在
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

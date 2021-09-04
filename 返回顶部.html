@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 3000px;
+        }
+        .box {
+            width: 300px;
+            height: 60px;
+            position: fixed;
+            right: 0;
+            bottom: 20px;
+            background-color: orange;
+            text-align: center;
+            line-height: 60px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">返回顶部</div>
+    <script src="../../jQuery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            console.log($(this).scrollTop())
+           if ( $(this).scrollTop()>=2000) {
+               $('.box').stop().fadeIn(600)
+            }else{
+                $('.box').stop().fadeOut(600)
+            }
+        })
+        $('.box').click(function () {
+            $(window).scrollTop(0)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <script src="../../jQuery.min.js"></script>
+    <script>
+        // let div=$('<div></div>')
+        // $('body').append(div)
+        let heads = ['姓名', '年龄', '性别', '学号', '薪资', '城市'];
+        let datas = [
+            { name: '欧阳霸天', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '上海' },
+            { name: '令狐霸天', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '诸葛霸天', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '南京' },
+            { name: '西门霸天', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '深圳' },
+            { name: '鸠摩智', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '段延庆', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '段正淳', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '容子矩', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '崔绿华', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '梅超风', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '鲁有脚', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '焦木和尚', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '韩小莹', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '侯通海', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '欧阳克', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '欧阳峰', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '玄真道人', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '司徒伯雷', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '陈近南', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '张康年', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '吴大鹏', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '西奥图三世', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '任盈盈', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '林远图', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '郑镖头', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '张金鏊', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '陈歪嘴', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '洪人雄', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '余人彦', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '劳德诺', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '玉钟子', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '史镖头', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' },
+            { name: '东方不败', age: 19, gender: '男', stuId: '1001', salary: '20000', city: '北京' }
+        ];
+        // let tr = $('<tr></tr>')
+        // $.each(heads, function (index, item) {
+        //     let th = $('<th></th>')
+        //     th.html(item)
+        //     tr.append(th)
+        // })
+        // $('thead').append(tr)
+        // $.each(datas, function (index, item) {
+        //     let tr = $('<tr></tr>')
+        //     tr.html(`
+        //         <td>${item.name}</td>
+        //         <td>${item.age}</td> 
+        //         <td>${item.gender}</td>
+        //         <td>${item.stuId}</td>
+        //         <td>${item.salary}</td>
+        //         <td>${item.city}</td>
+        //         `)
+        //     $('tbody').append(tr)
+        // })
+        let tr=$('<tr></tr>')
+            $.each(heads,function (index,item) {
+                let th=$('<th></th>')
+                th.html(`<th>${item}</th>`)
+                tr.append(th)
+                })
+                $('thead').append(tr)
+                console.log(tr);
+    </script>
+</body>
+
+</html>
