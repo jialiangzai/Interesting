@@ -1,0 +1,16 @@
+html,
+body {
+    /* 最大高度避免分比率过高导致页面有空白 */
+    max-height: 100%; 
+    background: url('../images/bg.jpg') no-repeat top center / cover;
+}
+    /* 背景图因素 */
+    padding: 1rem .25rem 0;
+
+ url背景图片加引号有提示
+border-image-source: url("images/border.jpg");
+border-image-slice: 167 167 167 167;
+border-image-width: 20px;
+border-image-repeat: round;
+简写：
+border-image: url("images/border.jpg") 167/20px round;
