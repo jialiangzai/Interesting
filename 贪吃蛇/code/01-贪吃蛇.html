@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #map {
+            width: 800px;
+            height: 600px;
+            position: relative;
+            background-color: #ccc;
+        }
+    </style>
+    <!--引入所需的所有工具包-->
+    <script src="Food.js" charset="UTF-8"></script>
+    <script src="Snake.js" charset="UTF-8"></script>
+    <script src="Game.js" charset="UTF-8"></script>
+    <script>
+        window.onload = function () {
+            //需求: 蛇不停的移动，通过上下左右控制方向，吃到食物身体变长;
+                    //蛇移动原理：删除旧蛇画新蛇;
+                    //变方向原理：按键上下左右的时候，给蛇头的top/left值+1/-1;
+
+            //步骤：(面向对象解决问题)
+            //1.构造一个食物对象;(定位，随机位置，页面中只有一个)
+                //a. 初始化食物;(放到map中)
+                //b. 删除食物的方法;(最好不对外)
+            //2.构造一个蛇对象;(定位，固定位置，默认要向右移动)
+                //a. 初始化蛇;(放到map中)
+                //b. 删除蛇的方法;(最好不对外)
+                //c. 移动蛇的方法;(最好不对外)(只移动一个位置)
+            //3.构造一个游戏对象;(只对外提供一个方法，游戏开始)
+                //a. 游戏开始;
+                //b. 利用定时器移动蛇(小蛇快跑);(最好不对外)
+                //c. 按键改变方向;(最好不对外)
+
+
+            //测试
+            //创建Game对象，然后开始游戏;
+            var game = new Game(document.getElementById("map"));
+            game.start();
+
+            //最简单
+//            new Game(document.getElementById("map")).start();
+
+        }
+    </script>
+</head>
+<body>
+
+    <!--地图自己创建-->
+    <!--需求分析：地图里面应该有食物和蛇-->
+    <div id="map"></div>
+
+</body>
+</html>
